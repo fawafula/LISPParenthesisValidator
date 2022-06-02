@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using LISPParenthesisValidator.Domain.Utilities;
+using System;
 
 namespace LISPParenthesisValidator
 {
@@ -10,37 +9,27 @@ namespace LISPParenthesisValidator
         {
             Console.WriteLine("Welcome to LISP validator application!");
 
-            var lispCodeIsvalid = ValidateLISPCode(args);
-
-            if (lispCodeIsvalid)
-            {
-
-                Console.WriteLine("LISP code paentheses are valid.");
-            }
-            else
-            {
-                Console.WriteLine("LISP code parentheses validation failed.");
-            }
+            ValidateLISPCode(args);            
 
             Console.WriteLine("Application closed.");
 
         }
 
-        private static bool ValidateLISPCode(string[] lispCodargs)
+        private static void ValidateLISPCode(string[] lispCodargs)
         {
-            var looongString = string.Join(',', lispCodargs);
-           
-            var openParenthesesList = looongString.Where(c => c == '(');
+            var validator = new ParenthesisValidator(lispCodargs);
 
-            var closeParenthesesList = looongString.Where(c => c == ')');
-                     
+            var parenthesesAreValid = validator.ValidateParentheses();
 
-            if (openParenthesesList.ToList().Count == closeParenthesesList.ToList().Count)
+            if (parenthesesAreValid)
             {
-                return true;
-            }
 
-            return false;
+                Console.WriteLine("LISP code parentheses are valid.");
+            }
+            else
+            {
+                Console.WriteLine("LISP code parentheses validation failed.");
+            }
         }
     }
 }
