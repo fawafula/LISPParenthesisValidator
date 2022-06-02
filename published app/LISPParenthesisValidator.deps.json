@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "LISPParenthesisValidator/1.0.0": {
+        "dependencies": {
+          "LISPParenthesisValidator.Domain": "1.0.0"
+        },
+        "runtime": {
+          "LISPParenthesisValidator.dll": {}
+        }
+      },
+      "LISPParenthesisValidator.Domain/1.0.0": {
+        "runtime": {
+          "LISPParenthesisValidator.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LISPParenthesisValidator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LISPParenthesisValidator.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
