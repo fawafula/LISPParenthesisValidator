@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LISPParenthesisValidator": {
+      "commandName": "Project",
+      "commandLineArgs": "(write(+ (* (/ 9 5) 60) 32))"
+    }
+  }
+}
