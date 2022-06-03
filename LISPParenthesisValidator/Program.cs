@@ -9,7 +9,10 @@ namespace LISPParenthesisValidator
         {
             Console.WriteLine("Welcome to LISP validator application!");
 
-            ValidateLISPCode(args);            
+            ValidateLISPCode(args);
+
+            Console.WriteLine("Press any key to close application.");
+            Console.ReadLine();
 
             Console.WriteLine("Application closed.");
 
@@ -17,19 +20,33 @@ namespace LISPParenthesisValidator
 
         private static void ValidateLISPCode(string[] lispCodargs)
         {
-            var validator = new ParenthesisValidator(lispCodargs);
+            try
+            {
+                var validator = new ParenthesisValidator(lispCodargs);
 
-            var parenthesesAreValid = validator.ValidateParentheses();
+                var parenthesesAreValid = validator.ValidateParentheses();
 
-            if (parenthesesAreValid)
+                if (parenthesesAreValid)
+                {
+
+                    Console.WriteLine("LISP code parentheses are valid.");
+                }
+                else
+                {
+                    Console.WriteLine("LISP code parentheses validation failed.");
+                }
+            }
+            catch (Exception ex)
             {
 
-                Console.WriteLine("LISP code parentheses are valid.");
+                throw new Exception(ex.Message);
             }
-            else
+            finally
             {
-                Console.WriteLine("LISP code parentheses validation failed.");
+                Console.WriteLine("Press any key to close application.");
+                Console.ReadLine();
             }
+           
         }
     }
 }

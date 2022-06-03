@@ -28,19 +28,28 @@ namespace LISPParenthesisValidator.Domain.Utilities
         #region Methods
         public bool ValidateParentheses() 
         {
-            var looongString = string.Join(',', _lispCode);
-
-            var openParenthesesList = looongString.Where(c => c == '(');
-
-            var closeParenthesesList = looongString.Where(c => c == ')');
-
-
-            if (openParenthesesList.ToList().Count == closeParenthesesList.ToList().Count)
+            try
             {
-                return true;
-            }
+                var looongString = string.Join(',', _lispCode);
 
-            return false;
+                var openParenthesesList = looongString.Where(c => c == '(');
+
+                var closeParenthesesList = looongString.Where(c => c == ')');
+
+
+                if (openParenthesesList.ToList().Count == closeParenthesesList.ToList().Count)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.InnerException.Message);
+            }
+            
         }
 
         #endregion
