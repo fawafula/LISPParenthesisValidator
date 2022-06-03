@@ -43,7 +43,7 @@ namespace LISPParenthesisValidator
             }
             finally
             {
-                Console.WriteLine("Press any key to close application.");
+                Console.WriteLine("Press any key to continue.");
                 Console.ReadLine();
             }
            
