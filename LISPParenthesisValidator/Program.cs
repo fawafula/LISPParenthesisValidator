@@ -3,13 +3,22 @@ using System;
 
 namespace LISPParenthesisValidator
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to LISP validator application!");
 
-            ValidateLISPCode(args);
+            if (args != null && args.Length > 0 )
+            {
+                ValidateLISPCode(args);
+            }
+            else
+            {
+                Console.WriteLine("Please provide some LISP code to evaluate.");
+            }
+
+           
 
             Console.WriteLine("Press any key to close application.");
             Console.ReadLine();
